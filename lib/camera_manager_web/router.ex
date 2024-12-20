@@ -7,6 +7,10 @@ defmodule CameraManagerWeb.Router do
 
   scope "/api", CameraManagerWeb do
     pipe_through :api
+
+    get "/cameras", CameraController, :index
+
+    post "/notify-users", NotifyUsersController, :notify_users
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
